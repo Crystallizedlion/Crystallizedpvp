@@ -1,0 +1,1 @@
+Build the plugin (see README.md) and drop CrystallizedPvP.jar in this folder.

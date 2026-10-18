@@ -1,0 +1,93 @@
+# crystallizedsmp - Crystal PvP config
+server-name: "crystallizedsmp"
+
+pvp:
+  no-attack-cooldown: true     # 1.8-style spam clicking
+  no-fall-damage: true
+  no-hunger: true
+  instant-respawn: true
+  refill-on-kill: true         # killer gets healed + kit refilled
+  streak-announce-every: 5
+
+crystals:
+  instant-break: true          # hitting a crystal pops it immediately
+  power: 6.0                   # vanilla end crystal = 6.0
+  break-blocks: false          # false = arena is never destroyed
+
+# Item format:  MATERIAL*AMOUNT:enchant=level,enchant=level
+# Armor is auto-equipped by name. Enchant names are vanilla ids (protection, sharpness...)
+kit:
+  - NETHERITE_HELMET:protection=4,unbreaking=3,mending=1
+  - NETHERITE_CHESTPLATE:protection=4,unbreaking=3,mending=1
+  - NETHERITE_LEGGINGS:protection=4,unbreaking=3,mending=1
+  - NETHERITE_BOOTS:protection=4,feather_falling=4,unbreaking=3,mending=1
+  - NETHERITE_SWORD:sharpness=5,unbreaking=3,mending=1,fire_aspect=2
+  - DIAMOND_PICKAXE:efficiency=5,unbreaking=3
+  - OBSIDIAN*64
+  - END_CRYSTAL*64
+  - RESPAWN_ANCHOR*8
+  - GLOWSTONE*16
+  - GOLDEN_APPLE*32
+  - ENDER_PEARL*16
+  - EXPERIENCE_BOTTLE*32
+  - TOTEM_OF_UNDYING*3
+kit-offhand: TOTEM_OF_UNDYING
+
+messages:
+  join: "&bWelcome to &f&lcrystallizedsmp&r&b! Use &f/kit&b to restock."
+  kit: "&aKit refilled."
+  spawn-set: "&aSpawn set."
+
+# Filled in by /setspawn
+spawn:
+  world: ""
+  x: 0.5
+  y: 100.0
+  z: 0.5
+  yaw: 0.0
+  pitch: 0.0
+
+# ------------------------------------------------------------------ staff
+staff:
+  op-is-owner: true              # server operators count as OWNER (so you can bootstrap)
+  broadcast-punishments: true    # announce bans/mutes/kicks/warns in public chat
+  default-reason: "No reason given"
+  appeal: "discord.gg/yourlink"  # shown on the ban screen
+
+  prefixes:                      # shown in chat and the tab list
+    OWNER: "&4&lOWNER &c"
+    ADMIN: "&c&lADMIN &c"
+    MOD: "&2&lMOD &a"
+    HELPER: "&9&lHELPER &b"
+    MEMBER: "&7"
+
+  # Minimum rank needed per action: 1 = Helper, 2 = Mod, 3 = Admin, 4 = Owner
+  required:
+    warn: 1
+    kick: 1
+    mute: 1          # temp mutes
+    permmute: 2
+    ban: 2           # temp bans
+    permban: 3
+    unban: 2
+    unmute: 1
+    history: 1
+    punish: 1        # open the GUI
+    freeze: 1
+    vanish: 2
+    staffchat: 1
+    invsee: 2
+    invsee-edit: 3   # edit (not just view) the inventory
+    clearchat: 1
+    mutechat: 2
+    staffmanage: 4   # /staff set, /staff remove
+
+  # Reasons shown in the /punish GUI (max 7)
+  reasons:
+    - "Hacking / Cheating"
+    - "Spam"
+    - "Toxicity / Harassment"
+    - "Advertising"
+    - "Bug / Exploit abuse"
+    - "Team / Griefing"
+    - "Other"

@@ -1,0 +1,73 @@
+name: CrystallizedPvP
+version: 1.2.0
+main: net.crystallized.pvp.CrystallizedPvP
+api-version: '26.3'
+description: Crystal PvP core + staff system for crystallizedsmp (Paper 26.3)
+commands:
+  kit:
+    description: Refill your crystal PvP kit
+  spawn:
+    description: Go to spawn
+  setspawn:
+    description: Set the spawn point
+    permission: crystallized.admin
+  stats:
+    description: View kills, deaths and streaks
+    usage: /stats [player]
+  staff:
+    description: List staff or manage staff ranks
+    usage: /staff <list|set|remove>
+  ban:
+    description: Permanently ban a player
+    usage: /ban <player> [reason]
+  tempban:
+    description: Temporarily ban a player
+    usage: /tempban <player> <duration> [reason]
+  unban:
+    description: Unban a player
+    usage: /unban <player>
+  mute:
+    description: Permanently mute a player
+    usage: /mute <player> [reason]
+  tempmute:
+    description: Temporarily mute a player
+    usage: /tempmute <player> <duration> [reason]
+  unmute:
+    description: Unmute a player
+    usage: /unmute <player>
+  kick:
+    description: Kick a player
+    usage: /kick <player> [reason]
+  warn:
+    description: Warn a player
+    usage: /warn <player> <reason>
+  history:
+    description: View a player's punishment history
+    aliases: [punishments]
+    usage: /history <player>
+  punish:
+    description: Open the punishment GUI
+    usage: /punish <player>
+  freeze:
+    description: Freeze or unfreeze a player
+    usage: /freeze <player>
+  vanish:
+    description: Toggle vanish
+    aliases: [v]
+  sc:
+    description: Staff chat
+    aliases: [staffchat]
+    usage: /sc [message]
+  invsee:
+    description: View a player's inventory
+    usage: /invsee <player>
+  clearchat:
+    description: Clear chat for non-staff
+  mutechat:
+    description: Toggle global chat mute
+  report:
+    description: Report a player to staff
+    usage: /report <player> <reason>
+permissions:
+  crystallized.admin:
+    default: op
